@@ -3,308 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnchorLiu 的个人网站</title>
+  <title>AnchorLiu | 德州海天机电科技有限公司</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       line-height: 1.7;
       color: #333;
-      background: #f5f7fa;
+      background: #f7f9fc;
     }
+    a { text-decoration: none; color: inherit; }
 
-    /* 导航栏 */
+    /* 导航 */
     nav {
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
       z-index: 100;
     }
-
     nav .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 16px 20px;
     }
-
-    nav .logo {
-      font-size: 1.3rem;
+    .logo {
+      font-size: 1.25rem;
       font-weight: 700;
-      color: #2c3e50;
-      text-decoration: none;
+      color: #1a365d;
     }
-
+    .logo span {
+      color: #3182ce;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-left: 8px;
+    }
     nav ul {
       display: flex;
       list-style: none;
       gap: 28px;
     }
-
     nav a {
-      text-decoration: none;
-      color: #555;
+      color: #4a5568;
       font-weight: 500;
       transition: color 0.2s;
     }
+    nav a:hover { color: #3182ce; }
 
-    nav a:hover {
-      color: #3498db;
-    }
-
-    /* 通用容器 */
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    section {
-      padding: 70px 0;
-    }
-
+    section { padding: 80px 0; }
     h2 {
       font-size: 1.9rem;
-      margin-bottom: 30px;
-      color: #2c3e50;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #3498db;
-      border-radius: 2px;
-    }
-
-    /* 首页 */
-    #home {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-    }
-
-    #home h1 {
-      font-size: 2.8rem;
-      margin-bottom: 16px;
-    }
-
-    #home p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: white;
-      color: #667eea;
-      padding: 12px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* 卡片通用样式 */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 28px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
+      color: #1a365d;
       margin-bottom: 12px;
-      color: #2c3e50;
+    }
+    .section-desc {
+      color: #718096;
+      margin-bottom: 40px;
+      font-size: 1.05rem;
     }
 
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
+    /* 首页 Hero */
+    #home {
+      background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+      color: white;
+      padding: 110px 20px 100px;
+      text-align: center;
     }
-
-    /* 个人介绍 */
-    #about .about-content {
+    #home h1 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    #home .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.92;
+      max-width: 700px;
+      margin: 0 auto 12px;
+    }
+    #home .company {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 36px;
+    }
+    .btn-group {
       display: flex;
-      gap: 40px;
-      align-items: flex-start;
+      gap: 16px;
+      justify-content: center;
       flex-wrap: wrap;
     }
+    .btn {
+      display: inline-block;
+      padding: 13px 32px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #fff;
+      color: #1a365d;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: white;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+    }
 
-    #about .avatar {
+    /* 关于我 */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .avatar {
       width: 160px;
       height: 160px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, #2b6cb0, #1a365d);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 3rem;
-      font-weight: bold;
-      flex-shrink: 0;
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+    .about-text p {
+      margin-bottom: 16px;
+      color: #4a5568;
     }
 
-    #about .info {
-      flex: 1;
-      min-width: 280px;
+    /* 产品区域 */
+    #products {
+      background: #fff;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.25s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: #bee3f8;
+    }
+    .product-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      color: #1a365d;
+      margin-bottom: 12px;
+    }
+    .product-card p {
+      color: #4a5568;
+      font-size: 0.97rem;
     }
 
-    /* 作品集 */
-    .project-tag {
-      display: inline-block;
-      background: #e8f4fd;
-      color: #3498db;
-      font-size: 0.8rem;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-right: 6px;
-      margin-bottom: 8px;
+    /* 公司简介条 */
+    .company-bar {
+      background: #ebf8ff;
+      border-left: 4px solid #3182ce;
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 40px;
+      color: #2c5282;
     }
 
     /* 笔记 */
+    .note-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
     .note-item {
       background: white;
       border-radius: 10px;
-      padding: 20px 24px;
-      margin-bottom: 16px;
-      border-left: 4px solid #3498db;
+      padding: 22px 26px;
+      border-left: 4px solid #3182ce;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-
     .note-item h3 {
-      margin-bottom: 6px;
       font-size: 1.15rem;
+      color: #1a365d;
+      margin-bottom: 6px;
     }
-
-    .note-item .date {
+    .note-date {
       font-size: 0.85rem;
-      color: #999;
+      color: #a0aec0;
       margin-bottom: 8px;
     }
+    .note-item p {
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
 
-    /* 工具页 */
-    .tool-card {
+    /* 联系 */
+    #contact {
+      background: #1a365d;
+      color: white;
       text-align: center;
     }
-
-    .tool-icon {
-      font-size: 2.5rem;
-      margin-bottom: 14px;
+    #contact h2 { color: white; }
+    #contact .section-desc { color: rgba(255,255,255,0.8); }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .contact-item {
+      font-size: 1.05rem;
     }
 
-    /* 页脚 */
     footer {
-      background: #2c3e50;
-      color: #ecf0f1;
+      background: #0f2744;
+      color: rgba(255,255,255,0.7);
       text-align: center;
-      padding: 30px 20px;
+      padding: 24px;
       font-size: 0.9rem;
     }
 
-    footer a {
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    /* 响应式 */
-    @media (max-width: 600px) {
-      nav ul {
-        gap: 16px;
-        font-size: 0.9rem;
+    @media (max-width: 700px) {
+      #home h1 { font-size: 1.9rem; }
+      #about .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
-      #home h1 {
-        font-size: 2rem;
-      }
+      .avatar { margin: 0 auto 20px; }
+      nav ul { gap: 16px; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 导航栏 -->
+  <!-- 导航 -->
   <nav>
     <div class="container">
-      <a href="#home" class="logo">AnchorLiu</a>
+      <div class="logo">
+        AnchorLiu
+        <span>海天机电</span>
+      </div>
       <ul>
-        <li><a href="#about">个人介绍</a></li>
-        <li><a href="#works">作品集</a></li>
-        <li><a href="#notes">笔记</a></li>
-        <li><a href="#tools">工具</a></li>
+        <li><a href="#about">关于我</a></li>
+        <li><a href="#products">产品中心</a></li>
+        <li><a href="#notes">思考记录</a></li>
+        <li><a href="#contact">联系我们</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- 首页 -->
   <section id="home">
-    <h1>你好，我是 AnchorLiu 👋</h1>
-    <p>这里是我的个人网站，记录学习、分享作品、收藏实用工具。</p>
-    <a href="#about" class="btn">了解更多</a>
+    <h1>你好，我是 AnchorLiu</h1>
+    <p class="subtitle">专注预制混凝土模具、设备与生产线</p>
+    <p class="company">德州海天机电科技有限公司</p>
+    <div class="btn-group">
+      <a href="#products" class="btn btn-primary">查看产品</a>
+      <a href="#about" class="btn btn-outline">了解我</a>
+    </div>
   </section>
 
-  <!-- 个人介绍 -->
+  <!-- 关于我 -->
   <section id="about">
     <div class="container">
-      <h2>个人介绍</h2>
-      <div class="about-content">
+      <h2>关于我</h2>
+      <p class="section-desc">记录成长，也记录我们正在做的事情</p>
+      
+      <div class="about-grid">
         <div class="avatar">A</div>
-        <div class="info">
-          <p style="margin-bottom: 16px;">
-            你好！我是 <strong>AnchorLiu</strong>，一个喜欢探索新技术、提升效率的普通人。
-          </p>
-          <p style="margin-bottom: 16px;">
-            这里会分享我的学习笔记、做过的小项目，以及平时用到的实用工具。希望这个网站既能帮到自己，也能给路过的朋友一点启发。
-          </p>
-          <p>
-            兴趣方向：效率工具、知识管理、AI 应用、生活记录……
-          </p>
+        <div class="about-text">
+          <p>我是 <strong>AnchorLiu</strong>，目前在<strong>德州海天机电科技有限公司</strong>，专注于预制混凝土相关装备的研发与应用。</p>
+          <p>这个网站一方面记录我个人的学习与思考，另一方面也用来展示我们公司在<strong>预制混凝土模具、设备及生产线</strong>方面的产品和能力。</p>
+          <p>希望通过这里，能让更多人了解预制构件生产装备，也结识更多同行与合作伙伴。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 作品集 -->
-  <section id="works" style="background: #fff;">
+  <!-- 产品中心 -->
+  <section id="products">
     <div class="container">
-      <h2>作品集</h2>
-      <div class="card-grid">
-        <div class="card">
-          <span class="project-tag">个人项目</span>
-          <h3>我的个人网站</h3>
-          <p>使用 GitHub Pages 免费搭建的个人主页，包含介绍、作品、笔记和工具四个分区。</p>
+      <h2>产品中心</h2>
+      <p class="section-desc">德州海天机电科技有限公司 · 专注预制混凝土构件生产装备</p>
+
+      <div class="company-bar">
+        我们为预制混凝土构件生产企业提供模具、设备和完整生产线解决方案，帮助客户高效生产各类预制构件。
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-icon">🧱</div>
+          <h3>预制混凝土模具</h3>
+          <p>提供各类预制混凝土构件模具，涵盖常见构件类型，注重精度、耐用性和脱模效率，适配不同生产工艺需求。</p>
         </div>
-        <div class="card">
-          <span class="project-tag">进行中</span>
-          <h3>示例项目二</h3>
-          <p>这里可以放你做过的其
+
+        <div class="product-card">
+          <div class="product-icon">⚙️</div>
+          <h3>生产设备</h3>
+          <p>配套振动、成型、养护等相关设备，提升构件生产效率和质量稳定性，满足工厂化生产要求。</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">🏭</div>
+          <h3>完整生产线</h3>
+          <p>可根据客户产能和产品类型，提供从模具到设备的整体生产线规划与配套，助力客户快速投产。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 思考记录 -->
+  <section id="notes">
+    <div class="container">
+      <h2>思考与记录</h2>
+      <p class="section-desc">关于行业、产品和个人成长的一些记录</p>
+
+      <div class="note-list">
+        <div class="note-item">
+          <h3>为什么选择做预制混凝土装备</h3>
+          <div class="note-date">2026-10</div>
+          <p>预制建筑的发展带动了构件生产装备的需求，我们希望通过可靠的模具和设备，帮助工厂把构件做得更稳、更快。</p>
+        </div>
+
+        <div class="note-item">
+          <h3>关于效率的一点思考</h3>
+          <div class="note-date">2026-10</div>
+          <p>无论是个人学习还是工厂生产，效率往往来自于把重复的事情标准化。模具和设备做的，就是这件事。</p>
+        </div>
+
+        <div class="note-item">
+          <h3>持续更新中...</h3>
+          <div class="note-date">持续记录</div>
+          <p>这里会陆续放上行业观察、产品迭代思考，以及个人成长相关的内容。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact">
+    <div class="container">
+      <h2>联系我们</h2>
+      <p class="section-desc">欢迎咨询产品或交流合作</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>公司</strong><br>德州海天机电科技有限公司
+        </div>
+        <div class="contact-item">
+          <strong>方向</strong><br>预制混凝土模具 / 设备 / 生产线
+        </div>
+      </div>
+      
+      <p style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+        （后续可在这里补充电话、微信、邮箱等信息）
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 AnchorLiu · 德州海天机电科技有限公司</p>
+    <p style="margin-top: 6px; font-size: 0.85rem;">使用 GitHub Pages 搭建</p>
+  </footer>
+
+</body>
+</html>
