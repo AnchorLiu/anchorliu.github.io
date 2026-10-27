@@ -3,36 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的个人网站</title>
+  <title>AnchorLiu 的个人网站</title>
   <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      line-height: 1.6;
-      background: #f8f9fa;
-      color: #333;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    h1 { color: #2c3e50; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background: #f5f7fa;
+    }
+
+    /* 导航栏 */
+    nav {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+    }
+
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    /* 通用容器 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 30px;
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #3498db;
+      border-radius: 2px;
+    }
+
+    /* 首页 */
+    #home {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    #home h1 {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* 卡片通用样式 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
     .card {
       background: white;
-      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 28px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #2c3e50;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* 个人介绍 */
+    #about .about-content {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    #about .avatar {
+      width: 160px;
+      height: 160px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    #about .info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    /* 作品集 */
+    .project-tag {
+      display: inline-block;
+      background: #e8f4fd;
+      color: #3498db;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-right: 6px;
+      margin-bottom: 8px;
+    }
+
+    /* 笔记 */
+    .note-item {
+      background: white;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      border-left: 4px solid #3498db;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .note-item h3 {
+      margin-bottom: 6px;
+      font-size: 1.15rem;
+    }
+
+    .note-item .date {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    /* 工具页 */
+    .tool-card {
+      text-align: center;
+    }
+
+    .tool-icon {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+    }
+
+    /* 页脚 */
+    footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 16px;
+        font-size: 0.9rem;
+      }
+      #home h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>欢迎来到我的网站 👋</h1>
-    <p>这是我用 GitHub Pages 免费搭建的独立网站。</p>
-    <p>你可以在这里放个人介绍、作品展示、笔记、工具页……随便怎么用。</p>
-    <p><strong>现在时间：</strong> <span id="time"></span></p>
-  </div>
 
-  <script>
-    document.getElementById('time').textContent = new Date().toLocaleString('zh-CN');
-  </script>
-</body>
-</html>
+  <!-- 导航栏 -->
+  <nav>
+    <div class="container">
+      <a href="#home" class="logo">AnchorLiu</a>
+      <ul>
+        <li><a href="#about">个人介绍</a></li>
+        <li><a href="#works">作品集</a></li>
+        <li><a href="#notes">笔记</a></li>
+        <li><a href="#tools">工具</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 首页 -->
+  <section id="home">
+    <h1>你好，我是 AnchorLiu 👋</h1>
+    <p>这里是我的个人网站，记录学习、分享作品、收藏实用工具。</p>
+    <a href="#about" class="btn">了解更多</a>
+  </section>
+
+  <!-- 个人介绍 -->
+  <section id="about">
+    <div class="container">
+      <h2>个人介绍</h2>
+      <div class="about-content">
+        <div class="avatar">A</div>
+        <div class="info">
+          <p style="margin-bottom: 16px;">
+            你好！我是 <strong>AnchorLiu</strong>，一个喜欢探索新技术、提升效率的普通人。
+          </p>
+          <p style="margin-bottom: 16px;">
+            这里会分享我的学习笔记、做过的小项目，以及平时用到的实用工具。希望这个网站既能帮到自己，也能给路过的朋友一点启发。
+          </p>
+          <p>
+            兴趣方向：效率工具、知识管理、AI 应用、生活记录……
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品集 -->
+  <section id="works" style="background: #fff;">
+    <div class="container">
+      <h2>作品集</h2>
+      <div class="card-grid">
+        <div class="card">
+          <span class="project-tag">个人项目</span>
+          <h3>我的个人网站</h3>
+          <p>使用 GitHub Pages 免费搭建的个人主页，包含介绍、作品、笔记和工具四个分区。</p>
+        </div>
+        <div class="card">
+          <span class="project-tag">进行中</span>
+          <h3>示例项目二</h3>
+          <p>这里可以放你做过的其
