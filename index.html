@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的个人网站</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
+    }
+    h1 { color: #2c3e50; }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>欢迎来到我的网站 👋</h1>
+    <p>这是我用 GitHub Pages 免费搭建的独立网站。</p>
+    <p>你可以在这里放个人介绍、作品展示、笔记、工具页……随便怎么用。</p>
+    <p><strong>现在时间：</strong> <span id="time"></span></p>
+  </div>
+
+  <script>
+    document.getElementById('time').textContent = new Date().toLocaleString('zh-CN');
+  </script>
+</body>
+</html>
